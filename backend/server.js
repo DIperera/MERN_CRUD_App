@@ -2,11 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser'); //json into readable
 const routes = require('./routes/userroutes');
+const cors = require('cors');
 //oUqeU3VMapUrYruw
 const app = express(); //define the sever
 
 app.use(bodyParser.json()); //a middleware
 app.use(routes);
+app.use(cors());
 
 const PORT = 8000;
 const URL = 'mongodb+srv://dk:oUqeU3VMapUrYruw@mernapp.wcxex.mongodb.net/'; //since name is empty mongodb generates a database a database called 'test'
