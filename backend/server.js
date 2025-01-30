@@ -6,9 +6,9 @@ const cors = require('cors');
 //oUqeU3VMapUrYruw
 const app = express(); //define the sever
 
+app.use(cors());//moved this statement above the routes
 app.use(bodyParser.json()); //a middleware
 app.use(routes);
-app.use(cors());
 
 const PORT = 8000;
 const URL = 'mongodb+srv://dk:oUqeU3VMapUrYruw@mernapp.wcxex.mongodb.net/'; //since name is empty mongodb generates a database a database called 'test'
