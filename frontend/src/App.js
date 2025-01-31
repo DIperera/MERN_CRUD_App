@@ -1,13 +1,18 @@
-import React from "react";
-import Display from "./pages/display";
+import React, { useState } from 'react';
+import AddUser from './pages/AddUser';
+import Display from './pages/Display';
 
-const App = () => {
+export default function App() {
+  const [refresh, setRefresh] = useState(false);
+
+  function handleUserAdded() {
+    setRefresh(!refresh);
+  }
+
   return (
     <div>
-   hello
-   <Display/>
+      <AddUser onUserAdded={handleUserAdded} />
+      <Display key={refresh} />
     </div>
   );
-};
-
-export default App;
+}
